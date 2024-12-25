@@ -19,12 +19,13 @@ app.use(requestLogger);
 
 mongoose.connect('mongodb://127.0.0.1:27017/weblarek')
   .then(() => console.log('Подключение к MongoDB успешно'))
+  .then((data) => console.log(data))
   .catch((err) => console.error('Ошибка подключения к MongoDB:', err));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api/products', productRoutes);
-app.use('/api/orders', orderRoutes);
+app.use('/product', productRoutes);
+app.use('/orders', orderRoutes);
 
 app.use((_req, _res, next) => {
   next(new NotFoundError('Маршрут не найден'));
