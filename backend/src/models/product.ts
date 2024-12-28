@@ -5,7 +5,7 @@ const productSchema = new Schema({
   title: {
     type: String,
     unique: true,
-    required: [true, 'Поле "title" должно быть заполнено'],
+    required: [true, '"title" должно быть заполнено'],
     minlength: [2, 'Минимальная длина поля "title" - 2'],
     maxlength: [30, 'Максимальная длина поля "title" - 30'],
   },
@@ -15,7 +15,7 @@ const productSchema = new Schema({
   },
   category: {
     type: String,
-    required: [true, 'Поле "category" должно быть заполнено'],
+    required: [true, '"category" должно быть заполнено'],
   },
   description: {
     type: String,
